@@ -1,0 +1,58 @@
+$breakpoints: (
+  sm: (
+    maxWidth: 640px,
+    column: 4,
+    offset: 16,
+  ),
+  md: (
+    maxWidth: 768px,
+    column: 8,
+    offset: 24,
+  ),
+  lg: (
+    maxWidth: 1024px,
+    column: 8,
+    offset: 24,
+  ),
+  xl: (
+    maxWidth: 1280px,
+    column: 12,
+    offset: 32,
+  ),
+);
+
+.fu-row{
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  & > * {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  &.gap-hide{
+    padding: 0!important;
+  }
+}
+
+@each $name, $data in $breakpoints {
+  $offset: map-get($data, 'offset');
+  $column: map-get($data, 'column');
+  body.#{$name} {
+    & .fu-row {
+      padding: 0 calc(#{$offset} / 2 * 1px);
+      & > * {
+        padding: 0 calc(#{$offset} / 2 * 1px);
+        @for $i from 1 through $column {
+          &.cols-#{$name}-#{$i}{
+            width: calc(100% / #{$i});
+            flex-basis: calc(100% / #{$i});
+          }
+          &.offset-#{$i}{
+            margin-left: calc(100% / #{$i});
+          }
+        }
+      }
+    }
+  }
+}
