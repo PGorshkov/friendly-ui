@@ -1,0 +1,19 @@
+@import "../../assets/scss/tokens/typography";
+.FuButton {
+  border: none;
+  padding: 0;
+  &.md{
+    @include typography('sm', 'semibold');
+    padding: 6.5px 16px;
+    border-radius: 4px;
+  }
+  &.lg{
+    @include typography('md', 'semibold');
+    padding: 9px 24px;
+    border-radius: 4px;
+  }
+  &.primary {
+    background: var(--fu-primary-500);
+    color: var(--fu-white);
+  }
+}

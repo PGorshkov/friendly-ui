@@ -1,0 +1,158 @@
+* {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+$typography: (
+  heading1: (
+    font-size: 28px,
+    line-height: 1.2,
+    prefix: (
+      bold: 500,
+    )
+  ),
+  heading2: (
+    font-size: 24px,
+    line-height: 1.2,
+    prefix: (
+      bold: 500,
+    )
+  ),
+  heading3: (
+    font-size: 20px,
+    line-height: 1.2,
+    prefix: (
+      bold: 500,
+    )
+  ),
+  heading4: (
+    font-size: 18px,
+    line-height: 1.2,
+    prefix: (
+      bold: 500,
+    )
+  ),
+  lg: (
+    font-size: 16px,
+    line-height: 1.6,
+    prefix: (
+      light: 300,
+      regular: 400,
+      semibold: 600,
+    )
+  ),
+  md: (
+    font-size: 14px,
+    line-height: 1.6,
+    prefix: (
+      light: 300,
+      regular: 400,
+      semibold: 600,
+    )
+  ),
+  sm: (
+    font-size: 12px,
+    line-height: 1.6,
+    prefix: (
+      light: 300,
+      regular: 400,
+      semibold: 600,
+    )
+  ),
+  xs: (
+    font-size: 10px,
+    line-height: 1.6,
+    prefix: (
+      light: 300,
+      regular: 400,
+      semibold: 600,
+    )
+  )
+);
+
+@mixin typography ($name, $prefix-name) {
+  $font: map-get($typography, $name);
+  $prefix: map-get($font, 'prefix');
+  font-size: map-get($font, 'font-size');
+  line-height: map-get($font, 'line-height');
+  font-weight: map-get($prefix, $prefix-name);
+}
+
+.heading1 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.heading2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.heading3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.heading4 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.lg {
+  font-size: 16px;
+  line-height: 1.6;
+  &-light{
+    font-weight: 300;
+  }
+  &-regular{
+    font-weight: 400;
+  }
+  &-semibold{
+    font-weight: 600;
+  }
+}
+
+.md {
+  font-size: 14px;
+  line-height: 1.6;
+  &-light{
+    font-weight: 300;
+  }
+  &-regular{
+    font-weight: 400;
+  }
+  &-semibold{
+    font-weight: 600;
+  }
+}
+
+.sm {
+  font-size: 12px;
+  line-height: 1.6;
+  &-light{
+    font-weight: 300;
+  }
+  &-regular{
+    font-weight: 400;
+  }
+  &-semibold{
+    font-weight: 600;
+  }
+}
+
+.xs {
+  font-size: 10px;
+  line-height: 1.6;
+  &-light{
+    font-weight: 300;
+  }
+  &-regular{
+    font-weight: 400;
+  }
+  &-semibold{
+    font-weight: 600;
+  }
+}

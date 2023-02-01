@@ -1,7 +1,4 @@
-import ComponentA from './ComponentA.vue'
-import ComponentB from './ComponentB.vue'
-
+import FuButton from "./FuButton/FuButton";
 export {
-  ComponentA,
-  ComponentB
+  FuButton,
 }

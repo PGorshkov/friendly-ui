@@ -13,6 +13,8 @@ $--fu-primary-200: --fu-primary-200;
 $--fu-primary-300: --fu-primary-300;
 $--fu-primary-400: --fu-primary-400;
 $--fu-primary-500: --fu-primary-500;
+$--fu-primary-500-start: --fu-primary-500-start;
+$--fu-primary-500-end: --fu-primary-500-end;
 $--fu-primary-600: --fu-primary-600;
 $--fu-primary-700: --fu-primary-700;
 $--fu-primary-800: --fu-primary-800;
@@ -177,7 +179,9 @@ $themes: (
     $--fu-primary-200: #B2CCFF,
     $--fu-primary-300: #84ADFF,
     $--fu-primary-400: #528BFF,
-    $--fu-primary-500: #2970FF,
+    $--fu-primary-500: linear-gradient(60.23deg, #2970FF 0.2%, #0040C1 99.99%),
+    $--fu-primary-500-start: #2970FF,
+    $--fu-primary-500-end: #0040C1,
     $--fu-primary-600: #155EEF,
     $--fu-primary-700: #004EEB,
     $--fu-primary-800: #0040C1,
@@ -329,10 +333,11 @@ $themes: (
     $--fu-warm-900: #1C1917,
   ),
 );
+$theme: 'light';
 
 @each $name, $data in $breakpoints {
   body.#{$name} {
-    $colors: map-get($themes, 'light');
+    $colors: map-get($themes, $theme);
     @each $color, $data in $colors {
       $class: str-slice($color, 6, -1);
       & .#{$class}-#{$name}--text {
@@ -342,5 +347,11 @@ $themes: (
         color: var($color)
       }
     }
+  }
+}
+:root[theme="#{$theme}"] {
+  $colors: map-get($themes, $theme);
+  @each $color, $data in $colors {
+    #{$color}: $data
   }
 }
