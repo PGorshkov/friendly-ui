@@ -14,7 +14,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 #        working-directory: ./docs
-        run: ls
+      - name: Experiment
+        run: |
+          pwd             
+          mkdir hello
+          cd hello
+          pwd 
 
       - name: Setup Node
         uses: actions/setup-node@v1
