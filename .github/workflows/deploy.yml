@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        working-directory: ./docs
+#        working-directory: ./docs
+        run: ls
 
       - name: Setup Node
         uses: actions/setup-node@v1
