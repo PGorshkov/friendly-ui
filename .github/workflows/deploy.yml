@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        working-directory: ./docs
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -21,9 +22,6 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-
-      - name: change projects
-        run: cd ./docks
 
       - name: Build project
         run: npm run build
