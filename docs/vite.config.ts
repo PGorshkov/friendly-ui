@@ -8,5 +8,6 @@ export default defineConfig({
     hmr: {
       overlay: false
     }
-  }
+  },
+  base: '/friendly-ui/'
 })
