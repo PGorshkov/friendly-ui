@@ -27,11 +27,9 @@ jobs:
           npm install
           npm run build
           npm link
-
-      - name: Change cat docs
-        run: |
           cd docs
           pwd
+          ls node_modules/@pg/friendly-ui/dist
           npm link @pg/friendly-ui
           npm install
           npm run build
