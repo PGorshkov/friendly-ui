@@ -29,9 +29,9 @@ jobs:
           npm link
           cd docs
           pwd
-          ls node_modules/@pg/friendly-ui/dist
-          npm link @pg/friendly-ui
           npm install
+          npm link @pg/friendly-ui
+          ls node_modules/@pg/friendly-ui/dist
           npm run build
 
 #      - name: Build project
