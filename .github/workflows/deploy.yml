@@ -31,6 +31,10 @@ jobs:
       - name: Change cat docs
         run: |
           cd docs
+
+      - name: Change cat docs
+        run: |
+          pwd
           npm link @pg/friendly-ui
           npm install
           npm run build
