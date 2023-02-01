@@ -13,13 +13,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-#        working-directory: ./docs
-      - name: Experiment
-        run: |
-          pwd             
-          mkdir hello
-          cd hello
-          pwd 
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -29,8 +22,21 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Build project
-        run: npm run build
+      - name: npm link and build
+        run: |
+          npm install
+          npm run build
+          npm link
+
+      - name: Change cat docs
+        run: |
+          cd docs
+          npm link @pg/friendly-ui
+          npm install
+          npm run build
+
+#      - name: Build project
+#        run: npm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
