@@ -12,6 +12,8 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <fu-button size="sm"/>
   <fu-button />
   <fu-button size="lg"/>
+  <fu-button size="lg" disabled/>
 </template>

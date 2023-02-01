@@ -1,19 +1,46 @@
 @import "../../assets/scss/tokens/typography";
 .FuButton {
-  border: none;
   padding: 0;
-  &.md{
+  cursor: pointer;
+  outline: none;
+  &.sm{
     @include typography('sm', 'semibold');
-    padding: 6.5px 16px;
+    padding: 2.5px 12px;
+    border-radius: 4px;
+  }
+  &.md{
+    @include typography('md', 'semibold');
+    padding: 5px 16px;
     border-radius: 4px;
   }
   &.lg{
-    @include typography('md', 'semibold');
-    padding: 9px 24px;
+    @include typography('lg', 'semibold');
+    padding: 7px 24px;
     border-radius: 4px;
   }
   &.primary {
     background: var(--fu-primary-500);
     color: var(--fu-white);
+    border: 1px solid var(--fu-primary-500);
+    &:hover{
+      background: var(--fu-primary-600);
+      border: 1px solid var(--fu-primary-600);
+    }
+    &:focus-visible{
+      background: var(--fu-primary-400);
+      border: 1px solid var(--fu-primary-400);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(21, 94, 239, 0.25);
+    }
+    &:active{
+      outline: none;
+      background: var(--fu-primary-900);
+      border: 1px solid var(--fu-primary-900);
+    }
+  }
+  &:disabled{
+    pointer-events: none;
+    cursor: default;
+    background: var(--fu-grays-300);
+    color: var(--fu-grays-400);
   }
 }

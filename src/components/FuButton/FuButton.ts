@@ -2,23 +2,21 @@ import {defineComponent, h, watch, ref, getCurrentInstance, nextTick, onMounted,
 import './style.scss'
 
 import * as types from './FuButton.d'
-
-interface IFuButtonProps {
-  type: types.FuButtonType,
-  size: types.FuButtonSize
-}
 export default defineComponent({
   name: 'FuButton',
   props: {
     type: {
-      type: String as PropType<IFuButtonProps['type']>,
+      type: String as PropType<types.FuButtonType>,
       default: 'primary',
       required: true
     },
     size: {
-      type: String as PropType<IFuButtonProps['size']>,
+      type: String as PropType<types.FuButtonSize>,
       default: 'md',
       required: true
+    },
+    disabled: {
+      type: Boolean,
     }
   },
   setup(props) {
@@ -29,7 +27,8 @@ export default defineComponent({
           'FuButton',
           props.type,
           props.size
-        ]
+        ],
+        disabled: props.disabled
       },
         'asdasda'
       )
