@@ -9,7 +9,7 @@ module.exports = defineConfig({
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'my-lib',
       formats: ['es'], // adding 'umd' requires globals set to every external module
-      fileName: (format) => `my-lib.${format}.js`,
+      fileName: (format: any) => `my-lib.${format}.js`,
     },
     rollupOptions: {
       // external modules won't be bundled into your library

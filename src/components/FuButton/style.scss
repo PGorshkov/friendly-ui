@@ -21,7 +21,7 @@
   &.primary {
     background: var(--fu-primary-500);
     color: var(--fu-white);
-    border: 1px solid var(--fu-primary-500);
+    border: 1px solid var(--fu-primary-500-start);
     &:hover{
       background: var(--fu-primary-600);
       border: 1px solid var(--fu-primary-600);
@@ -42,5 +42,6 @@
     cursor: default;
     background: var(--fu-grays-300);
     color: var(--fu-grays-400);
+    border: 1px solid var(--fu-grays-300);
   }
 }
